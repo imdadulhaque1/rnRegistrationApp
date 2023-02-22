@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Aladin-Regular.ttf",
+      "sha1": "d69563b0933fa0b721b1e2726dec6c187891182b"
+    },
+    {
+      "path": "assets/fonts/Exo2-Regular.ttf",
+      "sha1": "6ed43b5137624e5e73898d242b9665c5e1f45928"
+    },
+    {
+      "path": "assets/fonts/Labrada-Regular.ttf",
+      "sha1": "2fa56042fc41ba2f738fa4135584fefe9c89f4c6"
+    },
+    {
+      "path": "assets/fonts/Lobster-Regular.ttf",
+      "sha1": "120c751cd7a77174037c2409ab883ef7efc5edbb"
+    },
+    {
+      "path": "assets/fonts/Tangerine-Regular.ttf",
+      "sha1": "de81de284d2c67b45f1e3d6c568cba6e6eb6e320"
+    }
+  ]
+}
