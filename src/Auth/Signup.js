@@ -2,6 +2,7 @@ import {
   Alert,
   Dimensions,
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -156,16 +157,17 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.grayBlack,
   },
   iconContainerStyle: {
-    flex: 0.2,
+    flex: 0.3,
     alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: 15,
   },
   iconStyle: {
     height: 90,
     width: 85,
   },
   formContainer: {
-    flex: 1.2,
+    flex: 1.6,
     backgroundColor: Colors.grayColor,
     borderTopStartRadius: 25,
     borderTopRightRadius: 25,

@@ -2,6 +2,7 @@ import {
   Alert,
   Dimensions,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
