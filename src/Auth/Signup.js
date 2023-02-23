@@ -1,4 +1,5 @@
 import {
+  Alert,
   Dimensions,
   Image,
   StatusBar,
@@ -18,8 +19,19 @@ const Signup = ({navigation}) => {
   function handleNavigate(screenName) {
     navigation.navigate(screenName);
   }
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState(false);
+  const [email, setEmail] = useState(false);
+  const [password, setPassword] = useState(false);
+  const [confirmPass, setConfirmPass] = useState(false);
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
+    useState(false);
+
+  const handleSubmit = () => {
+    Alert.alert(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}`);
+  };
   return (
     <View style={styles.mainContainer}>
       <View style={styles.iconContainerStyle}>
@@ -41,6 +53,7 @@ const Signup = ({navigation}) => {
                 style={styles.inputStyle}
                 placeholder="Enter Your Name........"
                 placeholderTextColor="gray"
+                onChangeText={value => setName(value)}
               />
             </View>
           </View>
@@ -55,6 +68,7 @@ const Signup = ({navigation}) => {
                 style={styles.inputStyle}
                 placeholder="+880 17700 19346"
                 placeholderTextColor="gray"
+                onChangeText={value => setPhone(value)}
               />
             </View>
           </View>
@@ -69,6 +83,7 @@ const Signup = ({navigation}) => {
                 style={styles.inputStyle}
                 placeholder="Enter Your Email........"
                 placeholderTextColor="gray"
+                onChangeText={value => setEmail(value)}
               />
             </View>
           </View>
@@ -83,6 +98,7 @@ const Signup = ({navigation}) => {
                 style={styles.inputStyle}
                 placeholder="********"
                 placeholderTextColor="gray"
+                onChangeText={value => setPassword(value)}
                 secureTextEntry={isPasswordVisible ? false : true}
               />
               <TouchableOpacity
@@ -102,11 +118,16 @@ const Signup = ({navigation}) => {
                 style={styles.inputStyle}
                 placeholder="********"
                 placeholderTextColor="gray"
-                secureTextEntry={isPasswordVisible ? false : true}
+                onChangeText={value => setConfirmPass(value)}
+                secureTextEntry={isConfirmPasswordVisible ? false : true}
               />
               <TouchableOpacity
-                onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
-                <IconCom name={isPasswordVisible ? 'eye-slash' : 'eye'} />
+                onPress={() =>
+                  setIsConfirmPasswordVisible(!isConfirmPasswordVisible)
+                }>
+                <IconCom
+                  name={isConfirmPasswordVisible ? 'eye-slash' : 'eye'}
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -117,6 +138,7 @@ const Signup = ({navigation}) => {
             <Button
               btnTitle="SIGN UP"
               onPress={() => handleNavigate('Dashboard')}
+              // onPress={() => handleSubmit()}
             />
           </View>
         </View>
