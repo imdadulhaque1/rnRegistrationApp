@@ -10,6 +10,7 @@ import React from 'react';
 import HSS from '../../Assets/images/logo.png';
 import IconCom from '../ReusableCom/IconCom';
 import {Colors, Fonts} from '../style';
+import {MotiView} from 'moti';
 
 const Welcome = ({navigation}) => {
   function handleNavigate(screenName) {

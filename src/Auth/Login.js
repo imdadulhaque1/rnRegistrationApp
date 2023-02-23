@@ -13,6 +13,7 @@ import IconCom from '../Components/ReusableCom/IconCom';
 import HSS from '../Assets/images/logo.png';
 import {Colors} from '../Components/style';
 import Button from '../Components/ReusableCom/Button';
+import CheckBox from '@react-native-community/checkbox';
 
 const Login = ({navigation}) => {
   function handleNavigate(screenName) {
@@ -21,6 +22,7 @@ const Login = ({navigation}) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPasswordl] = useState('');
+  const [isCheckbox, setIsCheckbox] = useState(false);
 
   const handleSubmit = () => {
     Alert.alert(email);
@@ -77,7 +79,12 @@ const Login = ({navigation}) => {
           </View>
           {/* Check Box */}
           <View style={styles.textContainer}>
-            <View>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <CheckBox
+                disabled={false}
+                value={isCheckbox}
+                onValueChange={newValue => setIsCheckbox(newValue)}
+              />
               <Text style={styles.textStyle}>Remember Me</Text>
             </View>
             <TouchableOpacity>
@@ -159,6 +166,7 @@ const styles = StyleSheet.create({
     color: Colors.BLACK,
   },
   textContainer: {
+    alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
   },
