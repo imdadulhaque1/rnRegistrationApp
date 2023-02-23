@@ -55,10 +55,15 @@ const Dashboard = () => {
             }}>
             <Image source={profilePic} style={styles.profileStyle} />
             <View style={{marginLeft: 10}}>
-              <Text style={{fontSize: 18, color: Colors.BLACK}}>{name}</Text>
-              <Text style={{fontSize: 14, color: Colors.WHITE}}>
-                {userType}
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: Colors.BLACK,
+                  fontFamily: 'Aladin-Regular',
+                }}>
+                {name}
               </Text>
+              <Text style={{fontSize: 14, color: 'gray'}}>{userType}</Text>
               <View style={{flexDirection: 'row', marginVertical: 10}}>
                 <TouchableOpacity
                   style={{
@@ -188,6 +193,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   profileStyle: {
+    borderColor: Colors.BLACK,
+    borderWidth: 2,
+    borderRadius: 100,
     height: 60,
     width: 60,
   },
