@@ -8,10 +8,9 @@ import Login from './src/Auth/Login';
 import Signup from './src/Auth/Signup';
 import Dashboard from './src/Components/Screen/Dashboard';
 import BackButton from './src/Components/ReusableCom/BuckButton';
-import Home from './src/Components/Screen/NavigationScreen/Home';
-import Notification from './src/Components/Screen/NavigationScreen/Notification';
-import Chat from './src/Components/Screen/NavigationScreen/Chat';
-import Setting from './src/Components/Screen/NavigationScreen/Setting';
+import GreetingsDashboard from './src/Components/Screen/Greetings/GreetingsDashboard';
+import AllGreetings from './src/Components/Screen/Greetings/greetingsFeatures/AllGreetings';
+import CreateGreetings from './src/Components/Screen/Greetings/greetingsFeatures/CreateGreetings';
 
 
 const Stack = createNativeStackNavigator();
@@ -59,27 +58,11 @@ function App() {
             headerLeft: () => <BackButton />,
           }}
         />
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: 'Home',
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              color: '#fff',
-              fontFamily: 'Rajdhani-Bold',
-            },
-            headerStyle: {
-              backgroundColor: '#0C1A2C',
-            },
-            headerLeft: () => <BackButton />,
-          }}
-        /> 
         <Stack.Screen
-          name="Notification"
-          component={Notification}
+          name="GreetingsDashboard"
+          component={GreetingsDashboard}
           options={{
-            title: 'Notification',
+            title: 'Greetings Dashboard',
             headerTitleAlign: 'center',
             headerTitleStyle: {
               color: '#fff',
@@ -92,10 +75,10 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="Chat"
-          component={Chat}
+          name="AllGreetings"
+          component={AllGreetings}
           options={{
-            title: 'Chat',
+            title: 'All Greetings',
             headerTitleAlign: 'center',
             headerTitleStyle: {
               color: '#fff',
@@ -108,10 +91,10 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="Setting"
-          component={Setting}
+          name="CreateGreetings"
+          component={CreateGreetings}
           options={{
-            title: 'Setting',
+            title: 'Create Greetings',
             headerTitleAlign: 'center',
             headerTitleStyle: {
               color: '#fff',
@@ -122,7 +105,7 @@ function App() {
             },
             headerLeft: () => <BackButton />,
           }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

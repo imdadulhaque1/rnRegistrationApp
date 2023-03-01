@@ -117,6 +117,7 @@ const Dashboard = () => {
               cardImgBack={oddBg}
               cardIcon={GreetingsIcon}
               cardTitle="Greetings"
+              screenName="GreetingsDashboard"
             />
             <DashboardCard
               cardImgBack={evenBg}

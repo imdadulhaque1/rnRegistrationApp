@@ -9,15 +9,15 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import GradientCard from '../../Assets/images/dashboard/gradientCardBg.png';
-import Untitled5 from '../../Assets/images/dashboard/Untitled-5.png';
+import {useNavigation} from '@react-navigation/native';
 
-const DashboardCard = ({cardImgBack, cardIcon, cardTitle}) => {
+const DashboardCard = ({screenName, cardImgBack, cardIcon, cardTitle}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.cardContainer}>
       <ImageBackground source={cardImgBack} style={styles.cardBgStyle}>
         <Image source={cardIcon} style={styles.cardImageStyle} />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate(screenName)}>
           <Text style={styles.cardTitle}>{cardTitle}</Text>
         </TouchableOpacity>
       </ImageBackground>
@@ -31,7 +31,7 @@ const {width, height} = Dimensions.get('screen');
 const styles = StyleSheet.create({
   cardContainer: {
     borderRadius: 20,
-    width: width - 186,
+    width: width - 200,
   },
   cardBgStyle: {
     justifyContent: 'center',
