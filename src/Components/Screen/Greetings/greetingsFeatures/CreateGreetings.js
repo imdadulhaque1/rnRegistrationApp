@@ -4,18 +4,20 @@ import CustomInputField from '../../../ReusableCom/InputFields/CustomInputField'
 import Button from '../../../ReusableCom/Button';
 import CustomizedSummernote from '../../../ReusableCom/InputFields/CustomizedSummernote';
 import {Colors} from '../../../style';
-
-// placeholderText,
-// placeholderTextColor,
-// value,
-// onChangeText,
+import ReuseableImageUploadBtn from '../../../ReusableCom/ReuseableImageUploadBtn';
 
 const CreateGreetings = () => {
   const [title, setTitle] = useState('');
   const [summernoteValues, setSummernoteValues] = useState('');
-  const handleSubmitForm = () => {
-    Alert.alert(summernoteValues);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const handleSubmitForm = summernoteTexts => {
+    setSummernoteValues(summernoteTexts);
+    Alert.alert(title);
   };
+  const handleImageSelected = imageData => {
+    setSelectedImage(imageData);
+  };
+  console.log(summernoteValues);
   return (
     <View style={styles.greetingsContainer}>
       <CustomInputField
@@ -28,12 +30,13 @@ const CreateGreetings = () => {
       />
       <View style={styles.summernoteViewStyles}>
         <CustomizedSummernote
-          summernotesValues={summernoteValues}
-          summernotesOnChangeText={value => {
-            setSummernoteValues(value);
-          }}
+          value={summernoteValues}
+          onChangeText={value => setSummernoteValues(value)}
         />
       </View>
+      <>
+        <ReuseableImageUploadBtn onImageSelected={handleImageSelected} />
+      </>
       <Button btnTitle="SUBMIT" onPress={() => handleSubmitForm()} />
     </View>
   );
