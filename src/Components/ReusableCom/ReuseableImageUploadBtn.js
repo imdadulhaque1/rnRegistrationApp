@@ -1,19 +1,3 @@
-// import {StyleSheet, Text, View} from 'react-native';
-// import React from 'react';
-// import RNFetchBlob from 'rn-fetch-blob';
-
-// const AllGreetings = () => {
-//   return (
-//     <View>
-//       <Text>AllGreetings</Text>
-//     </View>
-//   );
-// };
-
-// export default AllGreetings;
-
-// const styles = StyleSheet.create({});
-
 import React, {useState} from 'react';
 import {
   View,
@@ -25,6 +9,7 @@ import {
 } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import {Colors} from '../style';
+import IconCom from './IconCom';
 
 const ReuseableImageUploadBtn = ({onImageSelected}) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -53,7 +38,17 @@ const ReuseableImageUploadBtn = ({onImageSelected}) => {
       <TouchableOpacity
         onPress={handleSelectImage}
         style={styles.imageBtnStyle}>
-        <Text style={styles.btnTextStyle}>Image Upload</Text>
+        {!selectedImage ? (
+          <>
+            <IconCom name="file-upload" />
+            <Text style={styles.btnTextStyle}>Image Upload</Text>
+          </>
+        ) : (
+          <>
+            <IconCom name="edit" />
+            <Text style={styles.btnChangeTextStyle}>Change Image</Text>
+          </>
+        )}
       </TouchableOpacity>
       <View style={styles.uploadedImageStyle}>
         {selectedImage ? (
@@ -81,6 +76,9 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   imageBtnStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '75%',
     backgroundColor: Colors.grayColor,
     paddingVertical: 7,
@@ -112,5 +110,13 @@ const styles = StyleSheet.create({
     color: Colors.BLACK,
     textAlign: 'center',
     fontFamily: 'Aladin-Regular',
+    marginLeft: 10,
+  },
+  btnChangeTextStyle: {
+    fontSize: 20,
+    color: Colors.tnBgColor,
+    textAlign: 'center',
+    fontFamily: 'Aladin-Regular',
+    marginLeft: 10,
   },
 });
