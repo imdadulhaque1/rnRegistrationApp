@@ -26,6 +26,16 @@ const GreetingsDashboard = ({navigation}) => {
         iconName="plus-square"
         onPress={() => handleNavigate('CreateGreetings')}
       />
+      <GreetingsButton
+        btnTitle="Pending Greetings"
+        iconName="plus-square"
+        onPress={() => handleNavigate('AllGreetings')}
+      />
+      <GreetingsButton
+        btnTitle="Approved Greetings"
+        iconName="plus-square"
+        onPress={() => handleNavigate('AllGreetings')}
+      />
     </View>
   );
 };
