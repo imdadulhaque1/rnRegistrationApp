@@ -5,6 +5,7 @@ import Button from '../../../ReusableCom/Button';
 import CustomizedSummernote from '../../../ReusableCom/InputFields/CustomizedSummernote';
 import {Colors} from '../../../style';
 import ReuseableImageUploadBtn from '../../../ReusableCom/ReuseableImageUploadBtn';
+import ReuseableDatePicker from '../../../ReusableCom/ReuseableDatePicker';
 
 const CreateGreetings = () => {
   const [title, setTitle] = useState('');
@@ -18,6 +19,7 @@ const CreateGreetings = () => {
     setSelectedImage(imageData);
   };
   console.log(summernoteValues);
+
   return (
     <View style={styles.greetingsContainer}>
       <CustomInputField
@@ -34,9 +36,13 @@ const CreateGreetings = () => {
           onChangeText={value => setSummernoteValues(value)}
         />
       </View>
-      <>
+      <View>
         <ReuseableImageUploadBtn onImageSelected={handleImageSelected} />
-      </>
+      </View>
+      <View style={styles.dateBtnCustomizedStyle}>
+        <ReuseableDatePicker dateBtnTitle="START" />
+        <ReuseableDatePicker dateBtnTitle="END" />
+      </View>
       <Button btnTitle="SUBMIT" onPress={() => handleSubmitForm()} />
     </View>
   );
@@ -48,8 +54,7 @@ const {height, width} = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   greetingsContainer: {
-    width: width,
-    height: height,
+    flex: 1,
   },
   summernoteViewStyles: {
     height: 150,
@@ -64,5 +69,10 @@ const styles = StyleSheet.create({
   summernoteStyles: {
     backgroundColor: Colors.RED,
     marginTop: -100,
+  },
+  dateBtnCustomizedStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
